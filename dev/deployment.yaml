@@ -1,19 +1,42 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: myapp
+ name: webapp
+ namespace: myapp
+ labels:
+   app: web
+   env: dev
 spec:
-  selector:
-    matchLabels:
-      app: myapp
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - name: myapp
-        image: nanajanashia/argocd-app:1.2
-        ports:
-        - containerPort: 8080
+  containers:
+  - name: webcon
+    image: sudarshanlnx/2022sundayweb:v1
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 80
+      name: apache
+      protocol: TCP
+    resources:
+          requests:
+            memory: "200Mi"
+            cpu: "200m"
+          limits:
+            memory: "300Mi"
+            cpu: "400m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: websvc
+ namespace: myapp
+spec:
+ type: LoadBalancer
+ ports:
+ - name: apache
+   port: 80
+   targetPort: 80
+   protocol: TCP
+ selector:
+   app: web
+   env: dev
+
+
