@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: webcon
-    image: sudarshanlnx/2022sundayweb:v1
+    image: sudarshanlnx/2022sundayweb2:latest
     imagePullPolicy: Always
     ports:
     - containerPort: 80
