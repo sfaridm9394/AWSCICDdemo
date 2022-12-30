@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: webcon
-    image: sudarshanlnx/roxyweb:latest
+    image: sudarshanlnx/farmfresh:latest
     imagePullPolicy: Always
     ports:
     - containerPort: 80
