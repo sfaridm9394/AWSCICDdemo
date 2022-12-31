@@ -8,7 +8,7 @@ metadata:
    env: dev2
 spec:
   containers:
-  - name: webcon
+  - name: webcon2
     image: sudarshanlnx/farmfresh:v1
     imagePullPolicy: Always
     ports:
