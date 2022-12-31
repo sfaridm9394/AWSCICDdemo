@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: websvc2   #service name (it can be any name)
+ name: websvc   #service name (it can be any name)
  namespace: myapp
 spec:
  type: LoadBalancer
