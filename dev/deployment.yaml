@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
  name: webapp
- namespace: myapp
+ namespace: devproject
  labels:
    app: web
    env: dev
@@ -27,7 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
  name: websvc
- namespace: myapp
+ namespace: devproject
 spec:
  type: LoadBalancer
  ports:
