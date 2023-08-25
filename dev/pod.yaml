@@ -47,36 +47,36 @@ spec:
    apptype: web
    env: dev
 
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-   name: webingress
-   namespace: devproject
-spec:
-   ingressClassName: nginx
-   rules:
-   - host: "www.wetechzone28.com"
-     http:
-       paths:
-       - path: "/"
-         pathType: Prefix
-         backend:
-           service:
-             name: websvc1
-             port:
-              number: 80
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-   name: webhpa
-   namespace: devproject
-spec:
-  maxReplicas: 3
-  minReplicas: 1
-  targetCPUUtilizationPercentage: 30
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: webdeployment
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#    name: webingress
+#    namespace: devproject
+# spec:
+#    ingressClassName: nginx
+#    rules:
+#    - host: "www.wetechzone28.com"
+#      http:
+#        paths:
+#        - path: "/"
+#          pathType: Prefix
+#          backend:
+#            service:
+#              name: websvc1
+#              port:
+#               number: 80
+# ---
+# apiVersion: autoscaling/v1
+# kind: HorizontalPodAutoscaler
+# metadata:
+#    name: webhpa
+#    namespace: devproject
+# spec:
+#   maxReplicas: 3
+#   minReplicas: 1
+#   targetCPUUtilizationPercentage: 30
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: webdeployment
