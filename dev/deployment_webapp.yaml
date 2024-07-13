@@ -17,7 +17,7 @@ spec:
         env: dev
     spec:
       containers:
-      - image: sudarshanlnx/sundayweb2:v1
+      - image: sudarshanlnx/farmfresh:v1
         name: webcon1
         imagePullPolicy: Always
         ports:
