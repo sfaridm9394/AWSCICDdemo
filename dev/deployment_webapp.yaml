@@ -9,7 +9,7 @@ metadata:
   name: webdeployment
   namespace: devproject
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       apptype: web
