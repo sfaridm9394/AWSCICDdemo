@@ -22,7 +22,7 @@ spec:
         env: dev
     spec:
       containers:
-      - image: sudarshanlnx/farmfresh:v1
+      - image: nginx:latest
         name: webcon1
         imagePullPolicy: Always
         ports:
